@@ -13,7 +13,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "nodemon index.js",
+    "client": "npm start --prefix ./client",
+    "dev": "concurrently \"npm start\"\"npm run client\""
   },
   "author": "",
   "license": "ISC",
