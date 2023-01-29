@@ -44,6 +44,21 @@ app.use("/api/users",userRoute);
 app.use("/api/posts",postRoute);
 app.use("/api/categories", categoryRoute);
 
+
+//static file
+
+app.use(express.static(path.join(__dirname,'./client/build')));
+
+app.get('*',function(req,res){
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
+})
+
+
+
+
+
+
+    
 app.listen(3001,(req,res)=>{
     console.log("Backend is running.")
 })
